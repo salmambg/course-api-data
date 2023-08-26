@@ -13,23 +13,25 @@ public class TopicController {
     @RequestMapping("/topics")
     public List<Topic>getAllTopics() {
         return topicService.getAllTopics();
-
     }
+
     @RequestMapping("/topics/{id}") //this is a path
     public Topic getTopic(@PathVariable String id) { //by making curly braces and put a token as a variable part for Spring MVC
         // now spring to send that variable in the argument of the method , we have to use another annotation path variable to get the variable from the path
         return topicService.getTopic(id);
     }
+
     @RequestMapping(method = RequestMethod.POST, value = "/topics")
     public String addTopic(@RequestBody Topic topic) {
-
         topicService.addTopic(topic);
         return "Save Topic Successfully";
     }
+
     @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
     public void updateTopic(@RequestBody Topic topic,@PathVariable String id) {
         topicService.updateTopic(id ,topic);
     }
+
     @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
     public void deleteTopic(@PathVariable String id) {
         topicService.deleteTopic(id);
