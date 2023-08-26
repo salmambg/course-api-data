@@ -21,11 +21,13 @@ public class TopicController {
         return topicService.getTopic(id);
     }
 
+
     @RequestMapping(method = RequestMethod.POST, value = "/topics")
     public String addTopic(@RequestBody Topic topic) {
         topicService.addTopic(topic);
         return "Save Topic Successfully";
     }
+
 
     @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
     public void updateTopic(@RequestBody Topic topic,@PathVariable String id) {

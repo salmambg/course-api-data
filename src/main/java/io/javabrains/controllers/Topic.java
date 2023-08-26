@@ -10,6 +10,10 @@ public class Topic {
     private String name;
     private String description;
 
+
+
+    private String year;
+
     public Topic() {
 
     }
@@ -37,10 +41,19 @@ public class Topic {
     }
 
     public String getDescription() {
+
         return description;
     }
 
     public void setDescription(String description) {
+
         this.description = description;
+    }
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 }
